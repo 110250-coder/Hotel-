@@ -28,6 +28,33 @@ namespace Hotel_.Controllers
             return View();
         }
 
+
+        [Route("pagina1")]
+        public IActionResult pagina1()
+        {
+            return View();
+        }
+
+        [Route("pagina2")]
+        public IActionResult pagina2()
+        {
+            return View();
+        }
+
+        [Route("pagina3")]
+        public IActionResult pagina3()
+        {
+            return View();
+        }
+
+        [Route("pagina4")]
+        public IActionResult pagina4()
+        {
+            return View();
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
