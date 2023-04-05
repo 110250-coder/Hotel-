@@ -1,30 +1,24 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="~/css/site.css" />   
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <header>
+    <section class="navbar">
+    <ul class=navbar-contents>
+        <a class="link" href="/">Homepage</a>
+        <a class="link" href=/Pagina1> pagina1 </a>
+        <a class="link" href=/Pagina2> pagina2 </a>
+        <a class="link" href=/Pagina3> pagina3 </a>
+        <a class="link" href=/Pagina4> pagina4 </a>
+    </ul>
+    </section>
 
-        <div class="header">
-           
-            <div class="logo"> </div> 
-
-            <div class="navigatie">
-                <a class="link" href="/">Homepage</a>&nbsp
-                <a class="link" href=/Pagina1> pagina1 </a>&nbsp
-                <a class="link" href=/Pagina2> pagina2 </a>&nbsp
-                <a class="link" href=/Pagina3>pagina3 </a>&nbsp
-                <a class="link" href=/Pagina4>pagina4 </a>&nbsp
-                </div>
-
-            
-
-            <div class="headertext">@ViewData["Title"]</div>
-
-        </div>
-    </header>
 
     <div class="middlebody">
         <br><h1>    @RenderBody()</h1>        
