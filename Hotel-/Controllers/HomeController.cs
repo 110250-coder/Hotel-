@@ -35,12 +35,6 @@ namespace Hotel_.Controllers
             return View();
         }
 
-        [Route("rooms")]
-        public IActionResult rooms()
-        {
-            return View();
-        }
-
         [Route("locations")]
         public IActionResult locations()
         {
