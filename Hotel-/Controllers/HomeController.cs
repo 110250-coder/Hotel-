@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Hotel_.Database.Database;
 using Hotel_.Databases;
+using Microsoft.AspNetCore.Http;
 
 namespace Hotel_.Controllers
 {
@@ -23,6 +24,7 @@ namespace Hotel_.Controllers
 
         public IActionResult Index()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
 
             var locaties = GetAlllocaties();
 
@@ -42,12 +44,77 @@ namespace Hotel_.Controllers
         }
 
         [Route("locations")]
-        public IActionResult Locations()
+        public IActionResult locations()
         {
             var locaties = GetAlllocaties();
 
             return View(locaties);
         }
+
+        [Route("registreer")]
+        public IActionResult registreer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("registreer")]
+        public IActionResult registreer(Gebruiker gebruiker)
+        {
+            if (ModelState.IsValid)
+            {
+                HttpContext.Session.SetString("User", gebruiker.Naam);
+
+                DatabaseConnector.SaveGebruiker(gebruiker);
+
+                return Redirect("/");
+            }
+
+            return View(gebruiker);
+        }
+
+        [Route("login")]
+        public IActionResult login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult login(Gebruiker gebruiker)
+        {
+            if (ModelState.IsValid)
+            {
+                var rows = DatabaseConnector.GetRows($"select * from gebruikers WHERE naam = '{gebruiker.Naam}'");
+
+                if (rows.Count == 0)
+                {
+                    ViewData["error"] = "Unknown username!";
+                    // Gebruikersnaam bestaat niet
+                    return Redirect("/login");
+                }
+
+                var row = rows[0];
+
+                Gebruiker account = new Gebruiker();
+                account.Wachtwoord = row["wachtwoord"].ToString();
+                if (account.Wachtwoord.Equals(gebruiker.Wachtwoord))
+                {
+                    HttpContext.Session.SetString("User", gebruiker.Naam);
+                }
+                else
+                {
+                    ViewData["Error"] = "Wrong password!";
+                    return Redirect("/login");
+                }
+
+
+                return Redirect("/");
+            }
+
+            return View(gebruiker);
+        }
+
 
         [Route("contact")]
         public IActionResult contact()
@@ -57,14 +124,14 @@ namespace Hotel_.Controllers
 
         [HttpPost]
         [Route("contact")]
-        public IActionResult Contact(locaties locatie)
+        public IActionResult Contact(Contact contact)
         {
             if (ModelState.IsValid)
 
                 
                 return Redirect("/succes");
 
-            return View(locatie);
+            return View(contact);
         }
 
         [Route("location/{id}")]
