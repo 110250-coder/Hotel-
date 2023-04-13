@@ -29,26 +29,26 @@ namespace Hotel_.Controllers
         }
 
 
-        [Route("pagina1")]
-        public IActionResult pagina1()
+        [Route("booking")]
+        public IActionResult booking()
         {
             return View();
         }
 
-        [Route("pagina2")]
-        public IActionResult pagina2()
+        [Route("rooms")]
+        public IActionResult rooms()
         {
             return View();
         }
 
-        [Route("pagina3")]
-        public IActionResult pagina3()
+        [Route("locations")]
+        public IActionResult locations()
         {
             return View();
         }
 
-        [Route("pagina4")]
-        public IActionResult pagina4()
+        [Route("contact")]
+        public IActionResult contact()
         {
             return View();
         }
