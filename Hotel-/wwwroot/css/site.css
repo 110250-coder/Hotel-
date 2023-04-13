@@ -145,17 +145,57 @@ ul li:before {
     margin-left: -1em;
 }
 
-.title {
-    color: gold;
-    font-size: larger;
+#contact {
+    background-color: #f7f7f7;
+    padding: 50px 0;
 }
 
-.subtitles {
-    color: goldenrod;
-    font-size: medium;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.informatie {
-    color: white;
-    font-size: small;
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #005ea6;
 }
