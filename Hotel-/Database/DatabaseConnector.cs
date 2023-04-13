@@ -9,13 +9,14 @@ namespace Hotel_.Database.Database
         public static List<Dictionary<string, object>> GetRows(string query)
         {
             // stel in waar de database gevonden kan worden
-            // string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=fastfood;Uid=lgg;Pwd=<jouwwachtwoordhier>;";
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110712;Uid=110712;Pwd=inf2122sql;"; ;
+            //string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=fastfood;Uid=110712;Pwd=inf2122sql;";
+            //string connectionString = "Server=172.16.160.21;Port=3306;Database=110712;Uid=110712;Pwd=inf2122sql;"; ;
+            string connectionString = "Server=sql7.freemysqlhosting.net;Port=3306;Database=sql7612776;Uid=sql7612776;Pwd=KddxAyvhem;"; ;
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
 
-
+            //return new List<Dictionary<string, object>>();
             // verbinding maken met de database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

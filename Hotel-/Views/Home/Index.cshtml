@@ -14,6 +14,16 @@
     </div>
 </section>
 
+<section id="locaties">
+    @foreach (locaties locatie in Model)
+    {
+        <a href="locaties/@locatie.Id">
+            <p>@locatie.Stad</p>
+        </a>
+        
+    }
+</section>
+
 <section id="rooms">
     <div class="container">
         <h2>Our Rooms</h2>

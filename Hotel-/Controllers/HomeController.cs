@@ -53,6 +53,25 @@ namespace Hotel_.Controllers
             return View();
         }
 
+        [Route("locaties/{id}")]
+        public IActionResult Locations(int id)
+        {
+            var voorstelling = GetLocatie(id);
+
+            return View(voorstelling);
+        }
+
+        public locaties GetLocatie(int id)
+        {
+            var row = DatabaseConnector.GetRows($"select * from locaties WHERE id = {id}")[0];
+
+            locaties locatie = new locaties();
+            locatie.Date = row["date"].ToString();
+            locatie.Kamers = row["kamers"].ToString();
+            locatie.Stad = row["stad"].ToString();
+            return locatie;
+        }
+
         public List<locaties> GetAlllocaties()
         {
             // alle producten ophalen uit de database
@@ -68,6 +87,7 @@ namespace Hotel_.Controllers
                 p.Id= Convert.ToInt32(row["id"]);
                 p.Date = row["date"].ToString();
                 p.Kamers= row["kamers"].ToString();
+                p.Stad = row["stad"].ToString();
 
 
                 // en dat product voegen we toe aan de lijst met producten
