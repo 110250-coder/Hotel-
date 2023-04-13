@@ -1,31 +1,36 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Hotel Chain</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <section class="navbar">
-    <ul class=navbar-contents>
-        <a class="link" href="/">Homepage</a>
-        <a class="link" href=/Pagina1> pagina1 </a>
-        <a class="link" href=/Pagina2> pagina2 </a>
-        <a class="link" href=/Pagina3> pagina3 </a>
-        <a class="link" href=/Pagina4> pagina4 </a>
-    </ul>
-    </section>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Rooms">Rooms</a></li>
+                <li><a href="/Services">Services</a></li>
+                <li><a href="/Contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    @RenderBody()
 
 
-    <div class="middlebody">
-        <br><h1>    @RenderBody()</h1>        
-    </div>
+    <footer>
+        <section class="body">
+            <a class = "title"> Locaties </a> </Br>
+            <a class = "subtitles"> Bv.Welke locaties? of Hoe kom je in contact?</a> </Br>
+            <a class = "informatie"> Leuke info </a> </Br>
+        </section>
 
-
-    <footer> </footer>
+    </footer>
 
 
 </body>
