@@ -180,6 +180,8 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="date"],
+input[type="number"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -191,7 +193,7 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #0077cc;
+    background-color: #1E90FF;
     color: #fff;
     padding: 10px 20px;
     border: none;
