@@ -14,23 +14,36 @@ body {
 }
 
 /* Style header and navigation bar */
-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 10px;
-}
-
-nav ul {
-    list-style: none;
+nav {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
 }
 
-nav li {
-    margin: 0 10px;
+.logo {
+    flex-grow: 1;
 }
 
-nav a {
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu li a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
@@ -41,9 +54,15 @@ nav a {
     transition: all 0.3s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.logo img {
+    max-width: 150px;
+    vertical-align: middle;
 }
+
+.menu li a:hover {
+    color: #1E90FF;
+}
+
 
 /* Style hero section */
 #hero {
