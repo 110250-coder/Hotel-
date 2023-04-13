@@ -42,9 +42,11 @@ namespace Hotel_.Controllers
         }
 
         [Route("locations")]
-        public IActionResult locations()
+        public IActionResult Locations()
         {
-            return View();
+            var locaties = GetAlllocaties();
+
+            return View(locaties);
         }
 
         [Route("contact")]
@@ -53,8 +55,20 @@ namespace Hotel_.Controllers
             return View();
         }
 
-        [Route("locaties/{id}")]
-        public IActionResult Locations(int id)
+        [HttpPost]
+        [Route("contact")]
+        public IActionResult Contact(locaties locatie)
+        {
+            if (ModelState.IsValid)
+
+                
+                return Redirect("/succes");
+
+            return View(locatie);
+        }
+
+        [Route("location/{id}")]
+        public IActionResult Location(int id)
         {
             var voorstelling = GetLocatie(id);
 

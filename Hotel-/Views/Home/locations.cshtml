@@ -1,11 +1,17 @@
 ﻿@using Hotel_.Databases
-@model locaties
+@model List<locaties>
 
 @{
     ViewData["Title"] = "Locations";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>@Model.Stad</p>
-<p>@Model.Date</p>
-<p>@Model.Kamers</p>
+<section id="locaties">
+    @foreach (locaties locatie in Model)
+    {
+        <a href="location/@locatie.Id">
+            <p>@locatie.Stad</p>
+        </a>
+
+    }
+</section>
