@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Hotel_.Database.Database;
+using Hotel_.Databases;
 
 namespace Hotel_.Controllers
 {
@@ -22,20 +23,10 @@ namespace Hotel_.Controllers
 
         public IActionResult Index()
         {
-            // alle producten ophalen
-            var rows = DatabaseConnector.GetRows("select * from product");
-            
-            // lijst maken om alle namen in te stoppen
-            List<string> names = new List<string>();
 
-            foreach (var row in rows)
-            {
-                // elke naam toevoegen aan de lijst met namen
-                names.Add(row["naam"].ToString());
-            }
+            var locaties = GetAlllocaties();
 
-            // de lijst met namen in de html stoppen
-            return View(names);
+            return View(locaties);
         }
 
         public IActionResult Privacy()
@@ -62,6 +53,29 @@ namespace Hotel_.Controllers
             return View();
         }
 
+        public List<locaties> GetAlllocaties()
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows("select * from locaties");
+
+            // lijst maken om alle producten in te stoppen
+            List<locaties> locaties = new List<locaties>();
+
+            foreach (var row in rows)
+            {
+                // Voor elke rij maken we nu een product
+                locaties p = new locaties();
+                p.Id= Convert.ToInt32(row["id"]);
+                p.Date = row["date"].ToString();
+                p.Kamers= row["kamers"].ToString();
+
+
+                // en dat product voegen we toe aan de lijst met producten
+                locaties.Add(p);
+            }
+
+            return locaties;
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
