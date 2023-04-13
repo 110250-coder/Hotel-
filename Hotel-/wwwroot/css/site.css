@@ -1,4 +1,4 @@
-﻿html {
+html {
     font-family: 'Anuphan', sans-serif;
 }
 
@@ -30,4 +30,27 @@ body {
     padding: 0.4em 0.65em;
     text-decoration: none;
     float: right;
+}
+
+.body {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 25%;
+    width:100%;
+    background-color:black;
+}
+
+.title {
+    color: gold;
+    font-size:larger;
+}
+
+.subtitles {
+    color: goldenrod;
+    font-size: medium;
+}
+
+.informatie {
+    color: white;
+    font-size: small;
 }
