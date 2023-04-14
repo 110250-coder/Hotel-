@@ -58,10 +58,11 @@ namespace Hotel_.Database.Database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO gebruikers(naam, wachtwoord) VALUES(?naam, ?wachtwoord)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO gebruikers(naam, emailadress, wachtwoord) VALUES(?naam, ?emailadress, ?wachtwoord)", conn);
 
                 // Elke parameter moet je handmatig toevoegen aan de query
                 cmd.Parameters.Add("?naam", MySqlDbType.Text).Value = gebruiker.Naam;
+                cmd.Parameters.Add("?emailadress", MySqlDbType.Text).Value = gebruiker.Emailadress;
                 cmd.Parameters.Add("?wachtwoord", MySqlDbType.Text).Value = gebruiker.Wachtwoord;
                 cmd.ExecuteNonQuery();
             }
