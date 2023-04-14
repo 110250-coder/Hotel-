@@ -1,11 +1,14 @@
-﻿@{
+﻿@using Hotel_.Databases
+@model List<locaties>
+@{
     ViewData["Title"] = "Hotel {name}";
 }
 
 
+
 <section id="hero">
     <div class="container">
-        <h1>Welcome to Cool Hotel Chain</h1>
+        <h1>Welcome to Cool Hotel Chain, @ViewData["user"]</h1>
         <p>Experience luxury like never before</p>
         <a href="/booking" class="btn">Book Now</a>
     </div>

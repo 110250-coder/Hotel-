@@ -1,6 +1,17 @@
-﻿@{
+﻿@using Hotel_.Databases
+@model List<locaties>
+
+@{
     ViewData["Title"] = "Locations";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<section id="locaties">
+    @foreach (locaties locatie in Model)
+    {
+        <a href="location/@locatie.Id">
+            <p>@locatie.Stad</p>
+        </a>
+
+    }
+</section>
