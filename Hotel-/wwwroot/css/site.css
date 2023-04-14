@@ -229,7 +229,6 @@ ul {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    min-height: 100vh;
 }
 
 h2 {
@@ -300,57 +299,57 @@ button[type="submit"] {
     text-align: center;
 }
 
-    .footer h3 {
-        color: #FFF;
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
+.footer h3 {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
-    .footer p {
-        color: #FFF;
-        margin: 0 0 15px 0;
-    }
+.footer p {
+    color: #FFF;
+    margin: 0 0 15px 0;
+}
 
-    .footer ul.social {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+.footer ul.social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
-        .footer ul.social li {
-            display: inline-block;
-            margin-right: 10px;
-        }
+.footer ul.social li {
+    display: inline-block;
+    margin-right: 10px;
+}
 
-            .footer ul.social li:last-child {
-                margin-right: 0;
-            }
+.footer ul.social li:last-child {
+    margin-right: 0;
+}
 
-        .footer ul.social a {
-            display: block;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 50%;
-            background-color: #FFF;
-            color: #1E90FF;
-            font-size: 16px;
-            text-align: center;
-        }
+.footer ul.social a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #FFF;
+    color: #1E90FF;
+    font-size: 16px;
+    text-align: center;
+}
 
-    .footer ul li:before {
-        color: #1E90FF !important;
-    }
+.footer ul li:before {
+    color: #1E90FF !important;
+}
 
-    .footer hr {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        border: 0;
-        border-top: 1px solid #FFF;
-    }
+.footer hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 0;
+    border-top: 1px solid #FFF;
+}
 
-    .footer p.text-muted {
-        margin-bottom: 0;
-    }
+.footer p.text-muted {
+    margin-bottom: 0;
+}
