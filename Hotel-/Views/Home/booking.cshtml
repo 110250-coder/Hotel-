@@ -21,3 +21,19 @@
     </form>
   </div>
 </section>
+
+@model List<makers>
+
+@using Hotel_.Databases
+<section id="makers">
+    @foreach (makers makers in model)
+    {
+        <a href="makers/@makers.Id">
+            <p>@makers.Naam</p>
+            <h1>@makers.Naam</h1>
+
+        <p>@makers.Leeftijd</p>
+        <p>@makers.Informatie</p>
+        </a>
+    }
+</section>

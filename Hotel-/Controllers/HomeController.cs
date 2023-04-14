@@ -178,6 +178,42 @@ namespace Hotel_.Controllers
             return locaties;
         }
 
+        public makers GetMaker(int id)
+        {
+            var row = DatabaseConnector.GetRows($"select * from makers WHERE id = {id}")[0];
+
+            makers makers = new makers();
+            makers.Naam = row["naam"].ToString();
+            makers.Informatie = row["informatie"].ToString();
+            makers.Leeftijd = row["leeftijd"].ToString();
+            return makers;
+        }
+
+        public List<makers> GetAllmakers()
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows("select * from makers");
+
+            // lijst maken om alle producten in te stoppen
+            List<makers> makers = new List<makers>();
+
+            foreach (var row in rows)
+            {
+                // Voor elke rij maken we nu een product
+                makers p = new makers();
+                p.Id = Convert.ToInt32(row["id"]);
+                p.Naam = row["naam"].ToString();
+                p.Informatie = row["informatie"].ToString();
+                p.Leeftijd = row["leeftijd"].ToString();
+
+
+                // en dat product voegen we toe aan de lijst met producten
+                makers.Add(p);
+            }
+
+            return makers;
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

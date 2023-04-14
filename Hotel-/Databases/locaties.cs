@@ -8,4 +8,13 @@
         public string? Kamers { get; set; }
        
     }
+
+    public class makers
+    {
+        public int Id { get; set; }
+        public string? Naam { get; set; }
+        public string? Informatie { get; internal set; }
+        public string? Leeftijd { get; set; }
+
+    }
 }
