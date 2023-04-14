@@ -4,17 +4,12 @@
 @{
     ViewData["Title"] = "About us";
 }
-<h1>@ViewData["Title"]</h1>
 
 <section id="makers">
+    <h2>About us</h2>
     @foreach (Makers maker in Model)
     {
-        <a href="makers/@maker.Id">
-            <p>@maker.Naam</p>
-            <h1>@maker.Naam</h1>
-
-        <p>@maker.Leeftijd</p>
+            <h1>@maker.Naam (@maker.Leeftijd jaar)</h1>
         <p>@maker.Informatie</p>
-        </a>
     }
 </section>

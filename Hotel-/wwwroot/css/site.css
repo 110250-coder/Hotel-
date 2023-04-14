@@ -225,3 +225,8 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #005ea6;
 }
+
+#makers {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+}
