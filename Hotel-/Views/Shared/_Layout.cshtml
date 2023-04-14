@@ -14,20 +14,27 @@
 <body>
     <header>
         <nav>
-          <div class="logo">
+        <div class="logo">
             <a href="/">
-              <img src="/images/logo.png" alt="Logo">
+                <img src="/images/logo.png" alt="Logo">
             </a>
-          </div>
-          <ul class="menu">
-            <li class="navpop"><a href="/">Home</a></li>
-            <li class="navpop"><a href="/locations">Locations</a></li>
-            <li class="navpop"><a href="/booking">Booking</a></li>
-             <li class="navpop"><a href="/login">Login</a></li>
-             <li class="navpop"><a href="/registreer">Register</a></li>
-             <li class="navpop"><a href="/aboutus">About us</a></li>
-            <li class="navpop"><a href="/contact">Contact Us</a></li>
-          </ul>
+        </div>
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/locations">Locations</a></li>
+            <li><a href="/booking">Booking</a></li>
+            <li><a href="/aboutus">About us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            @if (string.IsNullOrEmpty(ViewData["user"]?.ToString()))
+            {
+                <li><a href="/login">Login</a></li>
+                <li><a href="/registreer">Register</a></li>
+            }
+            else
+            {
+                <li><a>Welcome, @ViewData["user"]</a></li>
+            }
+        </ul>
         </nav>
     </header>
 
