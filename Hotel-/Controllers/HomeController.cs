@@ -125,7 +125,8 @@ namespace Hotel_.Controllers
         [Route("aboutus")]
         public IActionResult aboutus()
         {
-            return View();
+            var makers = GetAllmakers();
+            return View(makers);
         }
 
         [HttpPost]
@@ -172,7 +173,6 @@ namespace Hotel_.Controllers
                 // Voor elke rij maken we nu een product
                 Locaties p = new Locaties();
                 p.Id= Convert.ToInt32(row["id"]);
-                p.Date = row["date"].ToString();
                 p.Kamers= row["kamers"].ToString();
                 p.Stad = row["stad"].ToString();
 
@@ -216,7 +216,6 @@ namespace Hotel_.Controllers
                 // en dat product voegen we toe aan de lijst met producten
                 makers.Add(p);
             }
-
             return makers;
         }
 
