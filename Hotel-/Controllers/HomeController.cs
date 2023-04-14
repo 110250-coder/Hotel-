@@ -153,6 +153,17 @@ namespace Hotel_.Controllers
             return View(contact);
         }
 
+        [HttpGet("/error/{statusCode}")]
+        public IActionResult Index(int statusCode)
+        {
+            if (statusCode == 404)
+            {
+                return View("404");
+            }
+
+            return View();
+        }
+
         [Route("location/{id}")]
         public IActionResult location(int id)
         {

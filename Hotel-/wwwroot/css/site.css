@@ -237,6 +237,10 @@ button[type="submit"]:hover {
     padding: 50px 0;
 }
 
+#error {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+}
 
 
 /* Footer */

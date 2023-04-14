@@ -51,6 +51,8 @@ namespace Hotel_
 
             app.UseSession();
 
+            app.UseStatusCodePagesWithReExecute("/error/404");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
