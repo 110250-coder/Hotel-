@@ -142,11 +142,11 @@ namespace Hotel_.Controllers
         }
 
         [Route("location/{id}")]
-        public IActionResult Location(int id)
+        public IActionResult location(int id)
         {
-            var voorstelling = GetLocatie(id);
+            var locatie = GetLocatie(id);
 
-            return View(voorstelling);
+            return View(locatie);
         }
 
         public Locaties GetLocatie(int id)
@@ -154,7 +154,6 @@ namespace Hotel_.Controllers
             var row = DatabaseConnector.GetRows($"select * from locaties WHERE id = {id}")[0];
 
             Locaties locatie = new Locaties();
-            locatie.Date = row["date"].ToString();
             locatie.Kamers = row["kamers"].ToString();
             locatie.Stad = row["stad"].ToString();
             return locatie;
