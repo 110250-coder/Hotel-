@@ -122,6 +122,12 @@ namespace Hotel_.Controllers
             return View();
         }
 
+        [Route("aboutus")]
+        public IActionResult aboutus()
+        {
+            return View();
+        }
+
         [HttpPost]
         [Route("contact")]
         public IActionResult Contact(Contact contact)
@@ -142,29 +148,29 @@ namespace Hotel_.Controllers
             return View(voorstelling);
         }
 
-        public locaties GetLocatie(int id)
+        public Locaties GetLocatie(int id)
         {
             var row = DatabaseConnector.GetRows($"select * from locaties WHERE id = {id}")[0];
 
-            locaties locatie = new locaties();
+            Locaties locatie = new Locaties();
             locatie.Date = row["date"].ToString();
             locatie.Kamers = row["kamers"].ToString();
             locatie.Stad = row["stad"].ToString();
             return locatie;
         }
 
-        public List<locaties> GetAlllocaties()
+        public List<Locaties> GetAlllocaties()
         {
             // alle producten ophalen uit de database
             var rows = DatabaseConnector.GetRows("select * from locaties");
 
             // lijst maken om alle producten in te stoppen
-            List<locaties> locaties = new List<locaties>();
+            List<Locaties> locaties = new List<Locaties>();
 
             foreach (var row in rows)
             {
                 // Voor elke rij maken we nu een product
-                locaties p = new locaties();
+                Locaties p = new Locaties();
                 p.Id= Convert.ToInt32(row["id"]);
                 p.Date = row["date"].ToString();
                 p.Kamers= row["kamers"].ToString();
@@ -178,29 +184,29 @@ namespace Hotel_.Controllers
             return locaties;
         }
 
-        public makers GetMaker(int id)
+        public Makers GetMaker(int id)
         {
             var row = DatabaseConnector.GetRows($"select * from makers WHERE id = {id}")[0];
 
-            makers makers = new makers();
-            makers.Naam = row["naam"].ToString();
-            makers.Informatie = row["informatie"].ToString();
-            makers.Leeftijd = row["leeftijd"].ToString();
-            return makers;
+            Makers maker = new Makers();
+            maker.Naam = row["naam"].ToString();
+            maker.Informatie = row["informatie"].ToString();
+            maker.Leeftijd = row["leeftijd"].ToString();
+            return maker;
         }
 
-        public List<makers> GetAllmakers()
+        public List<Makers> GetAllmakers()
         {
             // alle producten ophalen uit de database
             var rows = DatabaseConnector.GetRows("select * from makers");
 
             // lijst maken om alle producten in te stoppen
-            List<makers> makers = new List<makers>();
+            List<Makers> makers = new List<Makers>();
 
             foreach (var row in rows)
             {
                 // Voor elke rij maken we nu een product
-                makers p = new makers();
+                Makers p = new Makers();
                 p.Id = Convert.ToInt32(row["id"]);
                 p.Naam = row["naam"].ToString();
                 p.Informatie = row["informatie"].ToString();

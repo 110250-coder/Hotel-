@@ -1,5 +1,5 @@
 ﻿@using Hotel_.Databases
-@model List<locaties>
+@model List<Locaties>
 
 @{
     ViewData["Title"] = "Locations";
@@ -7,7 +7,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <section id="locaties">
-    @foreach (locaties locatie in Model)
+    @foreach (Locaties locatie in Model)
     {
         <a href="location/@locatie.Id">
             <p>@locatie.Stad</p>
