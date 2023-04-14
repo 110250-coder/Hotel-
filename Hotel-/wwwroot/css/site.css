@@ -201,6 +201,7 @@ input[type="email"],
 input[type="tel"],
 input[type="date"],
 input[type="number"],
+input[type="password"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -235,6 +236,8 @@ button[type="submit"]:hover {
     background-color: #f7f7f7;
     padding: 50px 0;
 }
+
+
 
 /* Footer */
 .footer {

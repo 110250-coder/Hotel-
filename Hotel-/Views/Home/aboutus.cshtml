@@ -6,10 +6,12 @@
 }
 
 <section id="makers">
-    <h2>About us</h2>
-    @foreach (Makers maker in Model)
-    {
-            <h1>@maker.Naam (@maker.Leeftijd jaar)</h1>
-        <p>@maker.Informatie</p>
-    }
+    <div class="container">
+        <h2>About us</h2>
+        @foreach (Makers maker in Model)
+        {
+                <h1>@maker.Naam (@maker.Leeftijd jaar)</h1>
+            <p>@maker.Informatie</p>
+        }
+    </div>
 </section>

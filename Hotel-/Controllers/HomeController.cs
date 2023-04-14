@@ -33,6 +33,7 @@ namespace Hotel_.Controllers
 
         public IActionResult Privacy()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
@@ -40,12 +41,21 @@ namespace Hotel_.Controllers
         [Route("booking")]
         public IActionResult booking()
         {
-            return View();
+            ViewData["user"] = HttpContext.Session.GetString("User");
+            if (!string.IsNullOrEmpty(ViewData["user"]?.ToString()))
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         [Route("locations")]
         public IActionResult locations()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
             var locaties = GetAlllocaties();
 
             return View(locaties);
@@ -54,6 +64,7 @@ namespace Hotel_.Controllers
         [Route("registreer")]
         public IActionResult registreer()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
@@ -119,12 +130,14 @@ namespace Hotel_.Controllers
         [Route("contact")]
         public IActionResult contact()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
             return View();
         }
 
         [Route("aboutus")]
         public IActionResult aboutus()
         {
+            ViewData["user"] = HttpContext.Session.GetString("User");
             var makers = GetAllmakers();
             return View(makers);
         }
@@ -134,10 +147,9 @@ namespace Hotel_.Controllers
         public IActionResult Contact(Contact contact)
         {
             if (ModelState.IsValid)
-
-                
+            { 
                 return Redirect("/succes");
-
+            }
             return View(contact);
         }
 
@@ -145,7 +157,7 @@ namespace Hotel_.Controllers
         public IActionResult location(int id)
         {
             var locatie = GetLocatie(id);
-
+            ViewData["user"] = HttpContext.Session.GetString("User");
             return View(locatie);
         }
 

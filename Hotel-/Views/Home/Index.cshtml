@@ -1,14 +1,19 @@
-﻿@using Hotel_.Databases
-@model List<Locaties>
-@{
-    ViewData["Title"] = "Hotel {name}";
+﻿@{
+    ViewData["Title"] = "Hotel Amoria";
 }
 
 
 
 <section id="hero">
     <div class="container">
-        <h1>Welcome to Hotel Amoria, @ViewData["user"]</h1>
+        @if (!string.IsNullOrEmpty(ViewData["user"]?.ToString()))
+            {
+                <h1>Welcome to Hotel Amoria, @ViewData["user"]</h1>
+            }
+         else
+            {
+                <h1>Welcome to Hotel Amoria</h1>
+            }
         <p>Experience luxury like never before</p>
         <a href="/booking" class="btn">Book Now</a>
     </div>
