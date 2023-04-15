@@ -179,6 +179,7 @@ namespace Hotel_.Controllers
             Locaties locatie = new Locaties();
             locatie.Kamers = row["kamers"].ToString();
             locatie.Stad = row["stad"].ToString();
+            locatie.Region = row["region"].ToString();
             return locatie;
         }
 
@@ -197,6 +198,7 @@ namespace Hotel_.Controllers
                 p.Id= Convert.ToInt32(row["id"]);
                 p.Kamers= row["kamers"].ToString();
                 p.Stad = row["stad"].ToString();
+                p.Region = row["region"].ToString();
 
 
                 // en dat product voegen we toe aan de lijst met producten
